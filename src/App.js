@@ -30,6 +30,10 @@ function App() {
 
   // useEffect(()=> window.localStorage.setItem("currentPage", JSON.stringify(currentPage)))
 
+  function api(){
+    
+  }  
+
 
   return (
     <div className="brand-main">
