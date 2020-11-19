@@ -1,4 +1,4 @@
-import React,{ useState } from "react";;
+import React,{ useState } from "react";
 import { axiosHelper } from "../Utilities/axiosHelper";
 
 function Login() {
@@ -8,7 +8,7 @@ function Login() {
     function clickHandler(){
 
         const method = 'post';
-        const url = 'localhost:8000/v1/oauth/token';
+        const url = 'http://localhost:8000/v1/oauth/token';
         const data = { email, password };
 
         axiosHelper(method, url, data)

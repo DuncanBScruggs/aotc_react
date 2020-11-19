@@ -3,7 +3,7 @@ import NavBar from "./Components/NavBar";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import axiosHelper from "./Utilities/axiosHelper";
-import { BrowserRouter as Router, Link, Switch, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Switch, Route, useHistory } from 'react-router-dom';
 
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
         <div class="row justify-content-center">
           <div class="col-7">
             <Switch>
-              <Route path="/board">
+            <Route path="/board">
                 <h1>THANKS!</h1>
               </Route>
               <Route path="/signup">

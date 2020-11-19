@@ -1,4 +1,4 @@
-import React,{ useState } from "react";;
+import React,{ useState } from "react";
 import { axiosHelper } from "../Utilities/axiosHelper";
 
 function Signup() {
