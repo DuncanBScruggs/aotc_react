@@ -1,14 +1,14 @@
 import React,{ useState } from "react";;
 import { axiosHelper } from "../Utilities/axiosHelper";
 
-function Signup() {
+function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
     function clickHandler(){
 
         const method = 'post';
-        const url = 'http://localhost:8000/register';
+        const url = 'localhost:8000/v1/oauth/token';
         const data = { email, password };
 
         axiosHelper(method, url, data)
@@ -29,4 +29,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default Login;

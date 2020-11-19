@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavBar(props) {
 
@@ -15,12 +16,12 @@ function NavBar(props) {
                             props.pages.map((item, index) => {
                                 return (
                                     <li class="nav-item">
-                                        <a 
-                                            href="#"
+                                        <Link 
+                                            to={item.url}
                                             onClick={() => props.setPage(index)} 
                                             class={"nav-link " + (props.currentPage === index ? "active" : "")}>
                                             {item.readableName}
-                                        </a>
+                                        </Link>
                                     </li>
                                 )
                             })
