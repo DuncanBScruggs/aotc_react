@@ -1,17 +1,27 @@
 import React,{ useState } from "react";
-import { axiosHelper } from "../Utilities/axiosHelper";
+import { useHistory } from 'react-router-dom';
+import { AxiosHelper } from "../Utilities/AxiosHelper";
 
 function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    const history = useHistory();
+
+    function success(res){
+
+        if (res.status == 200){
+            history.push('/board');
+        }
+    }
+
+
     function clickHandler(){
 
         const method = 'post';
         const url = 'http://localhost:8000/register';
         const data = { email, password };
 
-        axiosHelper(method, url, data)
+        AxiosHelper(method, url, success, data)
     }
 
     return (

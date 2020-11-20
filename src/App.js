@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
-import axiosHelper from "./Utilities/axiosHelper";
-import { BrowserRouter as Router, Link, Switch, Route, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AppProvider } from './Utilities/AppContext'
+// import AxiosHelper from "./Utilities/AxiosHelper";
 
 
 function App() {
@@ -31,34 +32,37 @@ function App() {
 
   // useEffect(()=> window.localStorage.setItem("currentPage", JSON.stringify(currentPage)))
 
+  const [token, setToken] = useState('');
 
 
   return (
     <div className="brand-main">
       <Router>
+        <AppProvider value={{ token, setToken }}>
 
-        <NavBar
-          pages={pages}
-          currentPage={currentPage}
-          setPage={setPage}
-        />
+          <NavBar
+            pages={pages}
+            currentPage={currentPage}
+            setPage={setPage}
+          />
 
-        <div class="row justify-content-center">
-          <div class="col-7">
-            <Switch>
-            <Route path="/board">
-                <h1>THANKS!</h1>
-              </Route>
-              <Route path="/signup">
-                <Signup />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-            </Switch>
+          <div class="row justify-content-center">
+            <div class="col-7">
+              <Switch>
+                <Route path="/board">
+                  <h1>THANKS!</h1>
+                </Route>
+                <Route path="/signup">
+                  <Signup />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+              </Switch>
+            </div>
           </div>
-        </div>
 
+        </AppProvider>
       </Router>
     </div>
   );
