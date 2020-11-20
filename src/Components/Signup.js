@@ -10,7 +10,7 @@ function Signup() {
     function success(res){
 
         if (res.status == 200){
-            history.push('/board');
+            history.push('/login');
         }
     }
 
@@ -34,7 +34,7 @@ function Signup() {
                 <label for="InputPassword1">Password</label>
                 <input onChange={ e => setPassword(e.target.value) } value={ password } type="password" class="form-control" id="InputPassword1" placeholder="Password" />
             </div>
-            <button onClick={ clickHandler } class="btn btn-primary">Submit</button>
+            <button onClick={ clickHandler } class="btn btn-primary">Signup</button>
         </>
     )
 }

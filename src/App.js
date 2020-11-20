@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
+import Main from "./Components/Main";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AppProvider } from './Utilities/AppContext'
 // import AxiosHelper from "./Utilities/AxiosHelper";
@@ -11,6 +12,7 @@ function App() {
   const pages = [
     { readableName: "Signup", url: "signup" },
     { readableName: "Login", url: "login" },
+    { readableName: "Main", url: "main" },
   ]
 
 
@@ -46,7 +48,7 @@ function App() {
             setPage={setPage}
           />
 
-          <div class="row justify-content-center">
+          <div class="row my-5 justify-content-center">
             <div class="col-7">
               <Switch>
                 <Route path="/board">
@@ -57,6 +59,9 @@ function App() {
                 </Route>
                 <Route path="/login">
                   <Login />
+                </Route>
+                <Route path="/main">
+                  <Main />
                 </Route>
               </Switch>
             </div>

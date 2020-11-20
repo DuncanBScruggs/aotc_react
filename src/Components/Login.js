@@ -12,8 +12,8 @@ function Login() {
 
     function success(res) {
         if (res.status == 200) {
-            history.push('/board');
-            console.log({ res });
+            history.push('/main');
+            console.log( res );
             setToken(res.data.access_token);
             sessionStorage.setItem('token', res.data.access_token);
         }
